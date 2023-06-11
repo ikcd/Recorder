@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185B7AA22A3437B800122854 /* recordingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B7AA12A3437B800122854 /* recordingCard.swift */; };
+		185B7AA52A34398E00122854 /* RecordingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B7AA42A34398D00122854 /* RecordingListModel.swift */; };
 		1867967A2A330A5800FF68BD /* RecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186796792A330A5800FF68BD /* RecorderApp.swift */; };
 		1867967C2A330A5800FF68BD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867967B2A330A5800FF68BD /* Persistence.swift */; };
 		1867967F2A330A5800FF68BD /* Recorder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1867967D2A330A5800FF68BD /* Recorder.xcdatamodeld */; };
-		186796812A330A5800FF68BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186796802A330A5800FF68BD /* ContentView.swift */; };
 		186796832A330A5900FF68BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186796822A330A5900FF68BD /* Assets.xcassets */; };
 		186796872A330A5900FF68BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186796862A330A5900FF68BD /* Preview Assets.xcassets */; };
 		186796912A330A5A00FF68BD /* RecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186796902A330A5A00FF68BD /* RecorderTests.swift */; };
 		1867969B2A330A5A00FF68BD /* RecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867969A2A330A5A00FF68BD /* RecorderUITests.swift */; };
 		1867969D2A330A5A00FF68BD /* RecorderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867969C2A330A5A00FF68BD /* RecorderUITestsLaunchTests.swift */; };
+		186796AA2A330FD800FF68BD /* recordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186796A92A330FD800FF68BD /* recordingsList.swift */; };
+		186796AB2A33145800FF68BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186796802A330A5800FF68BD /* ContentView.swift */; };
+		18784D792A347FDC0058BDE4 /* recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18784D782A347FDC0058BDE4 /* recording.swift */; };
+		18784D7B2A3485420058BDE4 /* recorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18784D7A2A3485420058BDE4 /* recorderViewModel.swift */; };
+		18A30ABD2A3457F20003A13C /* RecorderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A30ABC2A3457F20003A13C /* RecorderListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		185B7AA12A3437B800122854 /* recordingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordingCard.swift; sourceTree = "<group>"; };
+		185B7AA42A34398D00122854 /* RecordingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListModel.swift; sourceTree = "<group>"; };
 		186796762A330A5800FF68BD /* Recorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186796792A330A5800FF68BD /* RecorderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderApp.swift; sourceTree = "<group>"; };
 		1867967B2A330A5800FF68BD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		186796962A330A5A00FF68BD /* RecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1867969A2A330A5A00FF68BD /* RecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderUITests.swift; sourceTree = "<group>"; };
 		1867969C2A330A5A00FF68BD /* RecorderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		186796A92A330FD800FF68BD /* recordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordingsList.swift; sourceTree = "<group>"; };
+		18784D782A347FDC0058BDE4 /* recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recording.swift; sourceTree = "<group>"; };
+		18784D7A2A3485420058BDE4 /* recorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recorderViewModel.swift; sourceTree = "<group>"; };
+		18A30ABC2A3457F20003A13C /* RecorderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		185B7AA02A34379900122854 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				186796A92A330FD800FF68BD /* recordingsList.swift */,
+				185B7AA12A3437B800122854 /* recordingCard.swift */,
+				18784D782A347FDC0058BDE4 /* recording.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		185B7AA32A34396A00122854 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				185B7AA42A34398D00122854 /* RecordingListModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		1867966D2A330A5800FF68BD = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +129,9 @@
 		186796782A330A5800FF68BD /* Recorder */ = {
 			isa = PBXGroup;
 			children = (
+				18A30ABB2A3457BB0003A13C /* viewModel */,
+				185B7AA32A34396A00122854 /* model */,
+				185B7AA02A34379900122854 /* views */,
 				186796792A330A5800FF68BD /* RecorderApp.swift */,
 				1867967B2A330A5800FF68BD /* Persistence.swift */,
 				186796802A330A5800FF68BD /* ContentView.swift */,
@@ -133,6 +166,15 @@
 				1867969C2A330A5A00FF68BD /* RecorderUITestsLaunchTests.swift */,
 			);
 			path = RecorderUITests;
+			sourceTree = "<group>";
+		};
+		18A30ABB2A3457BB0003A13C /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18A30ABC2A3457F20003A13C /* RecorderListViewModel.swift */,
+				18784D7A2A3485420058BDE4 /* recorderViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +308,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1867967A2A330A5800FF68BD /* RecorderApp.swift in Sources */,
+				186796AB2A33145800FF68BD /* ContentView.swift in Sources */,
 				1867967C2A330A5800FF68BD /* Persistence.swift in Sources */,
-				186796812A330A5800FF68BD /* ContentView.swift in Sources */,
+				185B7AA52A34398E00122854 /* RecordingListModel.swift in Sources */,
+				18784D7B2A3485420058BDE4 /* recorderViewModel.swift in Sources */,
+				18A30ABD2A3457F20003A13C /* RecorderListViewModel.swift in Sources */,
+				18784D792A347FDC0058BDE4 /* recording.swift in Sources */,
+				185B7AA22A3437B800122854 /* recordingCard.swift in Sources */,
 				1867967F2A330A5800FF68BD /* Recorder.xcdatamodeld in Sources */,
+				186796AA2A330FD800FF68BD /* recordingsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +403,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,6 +457,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -427,6 +479,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow Recorder to Record you Audio with you phoe's microphone.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -442,10 +495,12 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Recorder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kcd.Recorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -465,6 +520,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow Recorder to Record you Audio with you phoe's microphone.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -480,10 +536,12 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Recorder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kcd.Recorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
