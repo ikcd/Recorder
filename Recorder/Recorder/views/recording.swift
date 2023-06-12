@@ -10,25 +10,26 @@ import SwiftUI
 struct recording: View {
     @State var toggleStartStop : Bool = false
     let recorderclass = recorderViewModel()
-    @ObservedObject var REcorderViewModel = RecorderListViewModel()
+    @StateObject var REcorderViewModel = RecorderListViewModel()
     @State var showAlert : Bool = false
     
     var body: some View {
         VStack{
             Spacer()
             Button {
-                let permission = recorderclass.checkPermission()
-                if permission{
+                
+                if toggleStartStop{
+                    toggleStartStop.toggle()
+                    print(toggleStartStop)
+                    REcorderViewModel.addRecording(title: "New Recording", duration: "00:00:00")
+                    recorderclass.finishRecording(success: true)
+                }
+                else if !toggleStartStop{
                     let _ = print("recording started")
+                    let permission = recorderclass.checkPermission()
                     if !toggleStartStop{
                         toggleStartStop.toggle()
-                    } else if toggleStartStop{
-                        toggleStartStop.toggle()
-                        print(toggleStartStop)
-                        REcorderViewModel.addRecording(title: "New Recording", duration: "00:00:00")
-                        recorderclass.finishRecording(success: true)
                     }
-                    print(toggleStartStop)
                 }else{
                     showAlert.toggle()
                 }
@@ -42,8 +43,13 @@ struct recording: View {
         .alert("Allow Microphone Permission in settings", isPresented: $showAlert) {
         }
         .onAppear(){
-            recorderclass.fetchAllRecordings()
+//            recorderclass.fetchAllRecordings()
         }
+    }
+    
+    
+    func whatTodo(){
+        
     }
 }
 

@@ -61,7 +61,7 @@ struct recordingsList: View {
             
         }
         .onAppear(){
-            recorderclass.fetchAllRecordings()
+//            recorderclass.fetchAllRecordings()
         }
     }
 }

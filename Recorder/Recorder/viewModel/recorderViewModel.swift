@@ -43,7 +43,7 @@ class recorderViewModel{
     }
     //MARK: Start Recording
     func startRecording() {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(UUID())recording.m4a")
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(Date())recording.m4a")
         //Setting the Microphone Mode
         let microphoneMode: AVCaptureDevice.MicrophoneMode = AVCaptureDevice.MicrophoneMode.voiceIsolation
         // Convert AVCaptureDevice.MicrophoneMode to Int
