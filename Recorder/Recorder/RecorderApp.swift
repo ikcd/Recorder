@@ -12,8 +12,8 @@ struct RecorderApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            recording()
-//            recordingsList()
+//            recording()
+            recordingsList()
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

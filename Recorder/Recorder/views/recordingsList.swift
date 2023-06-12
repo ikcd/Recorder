@@ -9,18 +9,20 @@ import SwiftUI
 
 struct recordingsList: View {
     @State var abc : Bool = false
-    @ObservedObject var recorderViewModel = RecorderListViewModel()
+    @State var showSheet : Bool = false
+    @ObservedObject var REcorderViewModel = RecorderListViewModel()
+    let recorderclass = recorderViewModel()
     var body: some View {
         NavigationStack{
             VStack {
-                if recorderViewModel.viewModel.count > 0 {
+                if REcorderViewModel.viewModel.count > 0 {
                     ScrollView{
                         Spacer(minLength: 10)
                         Section {
-                            ForEach(recorderViewModel.viewModel) { i in
+                            ForEach(REcorderViewModel.viewModel) { i in
                                 recordingCard(recordingsList: i)
                             }.onDelete { i in
-                                recorderViewModel.removeRecording(index: i)
+                                REcorderViewModel.removeRecording(index: i)
                             }
                         }
                     }
@@ -44,14 +46,22 @@ struct recordingsList: View {
                     }
                     ToolbarItemGroup{
                         Button {
-                            recorderViewModel.addRecording(title: "New Recording", duration: "00:00:00")
+                            showSheet.toggle()
+                            REcorderViewModel.addRecording(title: "New Recording", duration: "00:00:00")
                         } label: {
                             Label("", systemImage: "plus")
                         }
                         .accessibilityLabel("New Recrding Window")
                     }
                 }
+                .sheet(isPresented: $showSheet, content: {
+                    recording()
+                        .presentationDetents([.fraction(0.3)])
+                })
             
+        }
+        .onAppear(){
+            recorderclass.fetchAllRecordings()
         }
     }
 }
