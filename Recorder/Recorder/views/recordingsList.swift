@@ -15,11 +15,12 @@ struct recordingsList: View {
     var body: some View {
         NavigationStack{
             VStack {
+                let _ = print("\(REcorderViewModel.viewModel.count)------")
                 if REcorderViewModel.viewModel.count > 0 {
                     ScrollView{
                         Spacer(minLength: 10)
                         Section {
-                            ForEach(REcorderViewModel.viewModel) { i in
+                            ForEach(REcorderViewModel.viewModel.reversed()) { i in
                                 recordingCard(recordingsList: i)
                             }.onDelete { i in
                                 REcorderViewModel.removeRecording(index: i)
@@ -32,7 +33,8 @@ struct recordingsList: View {
                     Spacer()
                 }
                 
-            }.navigationTitle("Recorder")
+            }
+            .navigationTitle("Recorder")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
@@ -47,7 +49,7 @@ struct recordingsList: View {
                     ToolbarItemGroup{
                         Button {
                             showSheet.toggle()
-                            REcorderViewModel.addRecording(title: "New Recording", duration: "00:00:00")
+//                            REcorderViewModel.addRecording(title: "New Recording", duration: "00:00:00")
                         } label: {
                             Label("", systemImage: "plus")
                         }
@@ -55,14 +57,24 @@ struct recordingsList: View {
                     }
                 }
                 .sheet(isPresented: $showSheet, content: {
-                    recording()
+                    recording(showSheet: $showSheet)
                         .presentationDetents([.fraction(0.3)])
+                        .onDisappear(){
+                            print("Disappearing")
+                            REcorderViewModel.fetchRecordings()
+                        }
                 })
             
+        }.onAppear(){
+            let _ = print("---")
+            let _ = print(REcorderViewModel.viewModel.count)
+            let _ = print("---")
+            REcorderViewModel.fetchRecordings()
         }
-        .onAppear(){
-//            recorderclass.fetchAllRecordings()
+        .onDisappear(){
+            
         }
+        
     }
 }
 

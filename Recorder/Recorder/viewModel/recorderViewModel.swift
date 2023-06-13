@@ -7,8 +7,11 @@
 
 import Foundation
 import AVFoundation
+import SwiftUI
 
 class recorderViewModel{
+    @ObservedObject var REcorderViewModel = RecorderListViewModel()
+    
     var description: String = ""
     
     var hash: Int = 0
@@ -18,6 +21,8 @@ class recorderViewModel{
     let recorderInstance = AVAudioSession.sharedInstance()
         
     var audioRecorder: AVAudioRecorder!
+    
+    
     
     func checkPermission() -> Bool{
         var hasPermission : Bool = false
@@ -83,23 +88,22 @@ class recorderViewModel{
     }
     
     //MARK: Fetech All Recordings
-    func fetchAllRecordings() {
+    func fetchAllRecordings() -> Bool {
         do{
             let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            print("VVVVVVV\(paths[0].path)")
             let recordings = try FileManager.default.contentsOfDirectory(atPath: paths[0].path)
             print("LLLLLLLL\(recordings)")
-            for url in recordings{
-                
-                let a = AVURLAsset.init(url: URL(string: url)!, options: nil)
-                print("____________\(CMTimeGetSeconds(a.duration))")
-                
-                RecorderListViewModel().addRecording(title: url, duration: "00:00:00")
-            }
             
+            for url in recordings{
+                let a =  AVURLAsset.init(url: URL(filePath: url), options: nil)
+                print(a)
+                REcorderViewModel.addRecording(title: url, duration: "00:00:00")
+            }
+            return true
             
         }catch{
             print("+++++++++++\(error)")
+            return  false
         }
     }
 

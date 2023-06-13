@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct recording: View {
+    @Binding var showSheet : Bool
     @State var toggleStartStop : Bool = false
     let recorderclass = recorderViewModel()
-    @StateObject var REcorderViewModel = RecorderListViewModel()
+    @ObservedObject var REcorderViewModel = RecorderListViewModel()
     @State var showAlert : Bool = false
     
     var body: some View {
@@ -21,8 +22,9 @@ struct recording: View {
                 if toggleStartStop{
                     toggleStartStop.toggle()
                     print(toggleStartStop)
-                    REcorderViewModel.addRecording(title: "New Recording", duration: "00:00:00")
                     recorderclass.finishRecording(success: true)
+                    REcorderViewModel.fetchRecordings()
+                    showSheet.toggle()
                 }
                 else if !toggleStartStop{
                     let _ = print("recording started")
@@ -40,10 +42,11 @@ struct recording: View {
             }
 
         }
-        .alert("Allow Microphone Permission in settings", isPresented: $showAlert) {
-        }
         .onAppear(){
-//            recorderclass.fetchAllRecordings()
+            print(showSheet)
+        }
+        .interactiveDismissDisabled()
+        .alert("Allow Microphone Permission in settings", isPresented: $showAlert) {
         }
     }
     
@@ -55,6 +58,6 @@ struct recording: View {
 
 struct recording_Previews: PreviewProvider {
     static var previews: some View {
-        recording()
+        recording(showSheet: .constant(true))
     }
 }
