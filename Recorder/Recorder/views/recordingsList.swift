@@ -21,6 +21,7 @@ struct recordingsList: View {
                         Spacer(minLength: 10)
                         Section {
                             ForEach(REcorderViewModel.viewModel.reversed()) { i in
+                                let _ = print(">>>>>>>>\(i.file)")
                                 recordingCard(recordingsList: i)
                             }.onDelete { i in
                                 REcorderViewModel.removeRecording(index: i)

@@ -15,7 +15,8 @@ struct recordingCard: View {
     var body: some View {
         VStack(alignment: .leading){
             HStack {
-                Text(recordingsList.title)
+                let _ = print("::::::::::::::::::\(type(of: recordingsList.file))")
+                Text("\(recordingsList.id)")
                 Spacer()
                 Button {
                 } label: {
@@ -35,7 +36,7 @@ struct recordingCard: View {
                     }
 
                     Spacer()
-                    Text(recordingsList.duration)
+                    Text("")
                 }
             }
                 .progressViewStyle(.linear)

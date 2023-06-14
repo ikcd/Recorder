@@ -14,9 +14,6 @@ struct RecorderApp: App {
         WindowGroup {
 //            recording()
             recordingsList()
-                .onAppear(){
-                    recorderViewModel().fetchAllRecordings()
-                }
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

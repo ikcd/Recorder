@@ -12,9 +12,9 @@ import AVFoundation
 class RecorderListViewModel : ObservableObject{
     @Published var viewModel : [RecordingListModel] = []
     
-    func addRecording(title : String, duration : String){
+    func addRecording(file : Data, path: String/*title : String, duration : String*/){
         print("Adding Recording")
-        viewModel.append(RecordingListModel(title: "New Recording \(viewModel.count + 1)", duration: duration))
+        viewModel.append(RecordingListModel(file: file, path: path/*title: "New Recording \(viewModel.count + 1)", duration: duration*/))
     }
     
     func removeRecording(index : IndexSet){
@@ -25,12 +25,10 @@ class RecorderListViewModel : ObservableObject{
         do{
             let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
             let recordings = try FileManager.default.contentsOfDirectory(atPath: paths[0].path)
-            print("LLLLLLLL\(recordings)")
             viewModel = []
             for url in recordings{
-                let a =  AVURLAsset.init(url: URL(filePath: url), options: nil)
-                print(a)
-                viewModel.append(RecordingListModel(title: "New Recording \(viewModel.count + 1)", duration: "00:00:00"))
+                var abc = URL(filePath: "\(paths[0].path)/\(url)")
+                viewModel.append(RecordingListModel(file: try Data(contentsOf: abc), path: "\(paths[0].path)/\(url)"/*title: "New Recording \(viewModel.count + 1)", duration: duration*/))
             }
             
         }catch{

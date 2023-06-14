@@ -88,24 +88,24 @@ class recorderViewModel{
     }
     
     //MARK: Fetech All Recordings
-    func fetchAllRecordings() -> Bool {
-        do{
-            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let recordings = try FileManager.default.contentsOfDirectory(atPath: paths[0].path)
-            print("LLLLLLLL\(recordings)")
-            
-            for url in recordings{
-                let a =  AVURLAsset.init(url: URL(filePath: url), options: nil)
-                print(a)
-                REcorderViewModel.addRecording(title: url, duration: "00:00:00")
-            }
-            return true
-            
-        }catch{
-            print("+++++++++++\(error)")
-            return  false
-        }
-    }
+//    func fetchAllRecordings() -> Bool {
+//        do{
+//            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//            let recordings = try FileManager.default.contentsOfDirectory(atPath: paths[0].path)
+//            print("LLLLLLLL\(recordings)")
+//            
+//            for url in recordings{
+//                let a =  AVURLAsset.init(url: URL(filePath: url), options: nil)
+//                print(a)
+//                REcorderViewModel.addRecording(title: url, duration: "00:00:00")
+//            }
+//            return true
+//            
+//        }catch{
+//            print("+++++++++++\(error)")
+//            return  false
+//        }
+//    }
 
     
     
